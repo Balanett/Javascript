@@ -85,20 +85,20 @@ document.getElementById("outcome").innerHTML = outcome;
 
 let points=parseInt(window.prompt("Write your points:"));
 
-percent = points/55*100
+percent = Math.round(points/55*100);
 
 if (percent<20) {
     console.log(1);
 
-} else if (percent>19 && percent<40) {
+} else if (percent>=20 && percent<40) {
     console.log(2);
 
-} else if (percent>39 && percent<60) {
+} else if (percent>=40 && percent<60) {
     console.log(3);
 
-} else if (percent>59 && percent<80) {
+} else if (percent>=60 && percent<80) {
     console.log(4);
 
-} else if (percent>79) {
+} else if (percent>=80) {
     console.log(5);
 }
