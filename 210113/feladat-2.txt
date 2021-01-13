@@ -1,0 +1,20 @@
+Feladatok:
+
+2. Írj egy ciklust, 
+	Ami kiírja 100-ig a prím számokat (prím szám: csak 1-el és önmagával osztható, pl,: 1,2, 5.).
+
+
+3. Írj egy rpgramot ,ami összeadja 1-tól 10-ig a számokat! (pl. result = 1+2+3+...+10)
+
+4. Írj egy programot, ami kiírja a 10X10-es szorzótáblát.
+	1x1 = 1;
+	1x2 = 2;
+	.
+	.
+	.
+	2x1 = 2;
+	.
+	.
+	10x10 = 100
+
+	

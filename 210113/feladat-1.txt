@@ -1,0 +1,5 @@
+1. Írj egy ciklust, 
+	A) ami kiírja a 1-től 20-ig az egész számokat!
+	B) ami kiírja 20-tól 1-ig a számokat!
+	c) ami kiírja 100-ig a páros számokat
+	d) ami kiírja 100-ig a páratlan számokat!
