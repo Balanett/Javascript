@@ -1,13 +1,13 @@
 //1. feladat: Prímszámok 1-100 között
 
-for (let num = 1; num <= 100; num++) {
-    let s = 0;
+for (let num = 2; num <= 100; num++) {
+    let isprime = true;
     for (let i = 2; i < num; i++) {
-        if (num % i == 0) {
-            s = 1;
+        if (num % i === 0) {
+            isprime = false;
         }
     }
-    if (num > 1 && s == 0) {
+    if (isprime === true) {
         console.log(num);
     }
 }
@@ -15,13 +15,12 @@ for (let num = 1; num <= 100; num++) {
 
 //2. feladat: Számok összeadása 1-10-ig
 
-arr = []
+
 let sum = 0;
 for (let j = 1; j <= 10; j++) {
     sum = sum+j;
-    arr.push(sum)
 }
-console.log(arr[arr.length-1])
+console.log(sum)
 
 
 //3. feladat: 10x10-es szorzótábla
