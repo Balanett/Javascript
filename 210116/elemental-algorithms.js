@@ -23,14 +23,16 @@ function max(arr) {
 }
 console.log(max([1,2,3,4,5,4,3,2,1]))
 
-sorted = []
+
 function sorting(arr) {
     for (let i=1; i < arr.length; i++) {
         for (let j=i+1; j < arr.length; j++) {
-            if (j < i) {
-                console.log("yes")
+            if (arr[j] < arr[i]) {
+                let s = arr[i]
+                arr[i] = arr[j]
+                arr[j] = s
             }
         }
-    }
+    } return arr
 }
 console.log(sorting([1,8,5,3,7,2,9]))
