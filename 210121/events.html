@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>strings</title>
+    <title>events</title>
     <style>
         #pic {
             display: none;
@@ -13,9 +13,6 @@
 <body>
 
 
-<script src="events.js"></script>
-
-
 <h3>1. feladat:</h3>
 <button onclick="document.getElementById('button').innerHTML='Hello World!'">Click me to say 'Hello World!'</button>
 <p id="button"></p>
@@ -23,41 +20,20 @@
 
 <h3>2. feladat:</h3>
 <span id="text">This is a normal span</span>
-<script>
-    document.getElementById("text").onmouseover = function() {mouseOver()};
-    document.getElementById("text").onmouseout = function() {mouseOut()};
-</script>
 
 
 <h3>3. feladat:</h3>
 <button onClick="counter()">Click me</button>
 <p id="counter"></p>
-<script>
-    document.getElementById("counter").innerHTML = function() {counter()};
-</script>
 
 
 <h3>4. feladat:</h3>
 <button id="show-hide">Show / hide picture</button>
 <br><br>
 <img id = pic src="pic_03.webp" alt="Lollypop">
-<script>
-    let button = document.getElementById('show-hide');
-    let image = document.getElementById('pic');
-    let imageDisplayed = false;
 
-    button.addEventListener("dblclick", function () {
 
-        if (!imageDisplayed) {
-            image.style.display = "block";
-            imageDisplayed = true
-        } else {
-            image.style.display = "none";
-            imageDisplayed = false;
-        }
-    })
-</script>
-
+<script src="events.js"></script>
 
 </body>
 </html>
