@@ -207,3 +207,79 @@ console.log(myMarsName(window.prompt("Mi a valódi neved?")))
 
 //15. feladat:
 
+function checker (object) {
+    if (parseInt(object.Energia) <= 0 || parseInt(object.Jollakottsag) <= 0 || parseInt(object.Szorakozas) <= 0) {
+        console.log(object.Nev+" nevű tamagochi sajnos meghalt.")
+        return start
+    } if (parseInt(object.Szorakozas) >= 10) {
+        object.Szorakozas = 10
+    } if (parseInt(object.Energia) >= 10) {
+        object.Energia = 10
+    } if (parseInt(object.Jollakottsag) >= 10) {
+        object.Jollakottsag = 10
+    } return object
+}
+
+function play(object) {
+    object.Szorakozas = parseInt(object.Szorakozas) + 2
+    object.Energia-=1
+    object.Jollakottsag-=1
+    checker(object)
+    return object
+}
+
+function feed (object) {
+    object.Jollakottsag = parseInt(object.Jollakottsag) + 2
+    object.Energia-=1
+    checker(object)
+    return object
+}
+
+function sleep (object) {
+    object.Jollakottsag = 1
+    object.Energia = 10
+    checker(object)
+    return object
+}
+
+function rename (object) {
+    object.Nev = window.prompt("Nevezz el!")
+    if (typeof object.Nev !== 'string') {
+        return "Ez nem egy valid név"
+    } checker(object)
+    return object
+}
+
+function game (tamagochi) {
+    let szemafor = true
+    let command = ""
+    while (szemafor)
+        command = window.prompt("Hello! Mit tehetek érted? :)")
+        if (command === "q") {
+            return "Au revoir"
+        } else if (command === "play") {
+            return play(tamagochi)
+        } else if (command === "feed") {
+            return feed(tamagochi)
+        } else if (command === "sleep") {
+            return sleep(tamagochi)
+        } else if (command === "rename") {
+            return rename(tamagochi)
+        }
+}
+
+
+let myTamagochi = {
+    Szorakozas: "2",
+    Energia: "5",
+    Jollakottsag: "3",
+    Nev: "Pikachu",
+    Elet: true
+}
+
+let start = window.prompt("Játszani akarsz? Y / N")
+if (start === "Y") {
+    console.log(game(myTamagochi))
+} else if (start === "N") {
+    console.log("Au revoir!")
+}
