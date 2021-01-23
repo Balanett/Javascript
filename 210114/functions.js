@@ -1,3 +1,5 @@
+/*
+
 // 1. Az engedelmes függvény
 
 function goodFunction () {
@@ -138,4 +140,70 @@ function isPrime(number) {
 
 isPrime(window.prompt("Kérem a számot:"))
 
+
 // 12. Mennyi ideig tartana elszámolni...?
+
+function calcTime (number) {
+    let result = ""
+    if (number<0 || 1000000<number) {
+        return "Nem 0 és 1 000 000 közötti a szám."
+    } else if (1<=number && number<=1000) {
+        result = number*0.5
+    } else if (1001<=number && number<=100000) {
+        result = number*0.8
+    } else if (100001<=number && number<=1000000) {
+        result = number*1
+    }
+    if (3600<result) {
+        return (result/3600).toFixed(2)+" óráig tartani elszámolni "+number+"-ig"
+    } else {
+        return result+" másodpercig tartani elszámolni "+number+"-ig"
+    }
+}
+
+console.log(calcTime(window.prompt("Kérem a számot:")))
+
+
+// 13. feladat:
+
+function dwarfGift(name) {
+    let gift = ""
+    if (name==="Tudor") {
+        gift = "enciklopédia"
+    } else if (name==="Vidor") {
+        gift = "lufi"
+    } else if (name==="Morgó") {
+        gift = "trombita"
+    } else if (name==="Morgó") {
+        gift = "trombita"
+    } else if (name==="Szundi") {
+        gift = "ébresztőóra"
+    } else if (name==="Szende") {
+        gift = "sál"
+    } else if (name==="Hapci") {
+        gift = "zsebkendő"
+    } else if (name==="Kuka") {
+        gift = "jegyzettömb"
+    } return name+" ennek örülne a legjobban: "+gift
+}
+
+console.log(dwarfGift(window.prompt("Melyik törpöt szeretnéd megajándékozni?")))
+
+
+// 14. feladat:
+
+function myMarsName(realName) {
+    let reversedName = realName.split("").reverse().join("")
+    let lowerReversedName = reversedName.toLowerCase()
+    let firstUpperReversedName = lowerReversedName.substring(0,1).toUpperCase()
+    let continuedReversedName = lowerReversedName.substring(1,realName.length)
+    return firstUpperReversedName+continuedReversedName
+}
+
+console.log(myMarsName(window.prompt("Mi a valódi neved?")))
+
+ */
+
+
+//15. feladat:
+
