@@ -1,5 +1,3 @@
-/*
-
 // 1. Az engedelmes függvény
 
 function goodFunction () {
@@ -202,15 +200,13 @@ function myMarsName(realName) {
 
 console.log(myMarsName(window.prompt("Mi a valódi neved?")))
 
- */
-
 
 //15. feladat:
 
 function checker (object) {
     if (parseInt(object.Energia) <= 0 || parseInt(object.Jollakottsag) <= 0 || parseInt(object.Szorakozas) <= 0) {
-        console.log(object.Nev+" nevű tamagochi sajnos meghalt.")
-        return start
+        object.Elet = false
+        console.log(object.Nev+" nevű tamagochi sajnos meghalt.\nAu Revoir!")
     } if (parseInt(object.Szorakozas) >= 10) {
         object.Szorakozas = 10
     } if (parseInt(object.Energia) >= 10) {
@@ -250,24 +246,6 @@ function rename (object) {
     return object
 }
 
-function game (tamagochi) {
-    let szemafor = true
-    let command = ""
-    while (szemafor)
-        command = window.prompt("Hello! Mit tehetek érted? :)")
-        if (command === "q") {
-            return "Au revoir"
-        } else if (command === "play") {
-            return play(tamagochi)
-        } else if (command === "feed") {
-            return feed(tamagochi)
-        } else if (command === "sleep") {
-            return sleep(tamagochi)
-        } else if (command === "rename") {
-            return rename(tamagochi)
-        }
-}
-
 
 let myTamagochi = {
     Szorakozas: "2",
@@ -277,9 +255,19 @@ let myTamagochi = {
     Elet: true
 }
 
-let start = window.prompt("Játszani akarsz? Y / N")
-if (start === "Y") {
-    console.log(game(myTamagochi))
-} else if (start === "N") {
-    console.log("Au revoir!")
+let szemafor = true
+while (szemafor && myTamagochi.Elet !== false) {
+    let command = window.prompt("Hello! Mit tehetek érted? :) (play, feed, sleep, rename or q)")
+    if (command === "q") {
+        console.log("Au revoir")
+        szemafor = false
+    } else if (command === "play") {
+        console.log(play(myTamagochi))
+    } else if (command === "feed") {
+        console.log(feed(myTamagochi))
+    } else if (command === "sleep") {
+        console.log(sleep(myTamagochi))
+    } else if (command === "rename") {
+        console.log(rename(myTamagochi))
+    }
 }
