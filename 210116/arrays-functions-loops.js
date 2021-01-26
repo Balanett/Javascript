@@ -78,3 +78,27 @@ let array = ["Anett", "Zsolt", "Kitti"]
 
 console.log(addParticipant(String(window.prompt("Kit adjak a listához?"))))
 console.log(removeParticipant(String(window.prompt("Kit töröljek a listából?"))))
+
+
+// 6. Bazinga!
+
+function baz(array) {
+    for (let i=0; i<array.length; i++) {
+        if (array[i]%15 === 0) {
+            array[i] = "Bazinga"
+        } else if (array[i]%5 === 0) {
+            array[i] = "inga"
+        } else if (array[i]%3 === 0) {
+            array[i] = "Baz"
+        }
+    } return arrayItems
+}
+
+function oneToNum(first, second) {
+    for (let i=first; i<=second; i++) {
+        arrayItems.push(i)
+    } return baz(arrayItems);
+}
+
+let arrayItems = [];
+console.log(oneToNum(1, parseInt(window.prompt("1-től meddig?"))))
