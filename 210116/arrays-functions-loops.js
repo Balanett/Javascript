@@ -1,3 +1,5 @@
+/*
+
 // 1. Duplázd meg!
 
 function doubleArray(arr) {
@@ -102,3 +104,28 @@ function oneToNum(first, second) {
 
 let arrayItems = [];
 console.log(oneToNum(1, parseInt(window.prompt("1-től meddig?"))))
+
+
+
+ */
+
+
+// 7. Hasáb felülete és térfogata
+
+function prism(a,b,c) {
+    if (a != parseInt(a) || b != parseInt(b) || c != parseInt(c)) {
+        return "Számot kérek!"
+    } else if (a<1 || b<1 || c<1) {
+        return "Pozitív számot kérek!"
+    } else {
+        let numsArray = [a,b,c]
+        let A = 2*a*b+2*c*(a+b)
+        let T = a*b*c
+        return "Alapadatok: "+numsArray+"\nFelszín: "+A+"\nTérfogat: "+T
+    }
+}
+
+let num1 = window.prompt("Első szám")
+let num2 = window.prompt("Második szám")
+let num3 = window.prompt("Harmadik szám")
+console.log(prism(num1,num2,num3))
