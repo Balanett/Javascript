@@ -3,8 +3,8 @@
 function createAnchor () {
     let anchor = document.createElement("a");
     document.body.appendChild(anchor);
-    anchor.href = "https://javascript.com";
-    anchor.innerHTML = "Javascript.com";
+    anchor.href = "https://asszisztensem.com";
+    anchor.innerHTML = "Asszisztensem";
     anchor.target = "_blank";
 }
 
@@ -16,7 +16,6 @@ createAnchor()
 function CreateToDoList(list) {
     let ul = document.createElement("ul");
     document.body.appendChild(ul);
-    ul.innerHTML = "My To Do-s";
     ul.className = "list"
 
     list.forEach(function (item) {
@@ -32,8 +31,6 @@ let toDoList = ["get up", "drink a coffee", "eat breakfast", "go to shower", "br
     "make up", "do hair", "close the door", "got to work"];
 
 CreateToDoList(toDoList)
-
-
 
 var removeItem = document.getElementsByClassName("list-item");
 for (let i=0; i<removeItem.length; i++) {
