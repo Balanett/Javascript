@@ -106,10 +106,6 @@ let arrayItems = [];
 console.log(oneToNum(1, parseInt(window.prompt("1-től meddig?"))))
 
 
-
- */
-
-
 // 7. Hasáb felülete és térfogata
 
 function prism(a,b,c) {
@@ -129,3 +125,58 @@ let num1 = window.prompt("Első szám")
 let num2 = window.prompt("Második szám")
 let num3 = window.prompt("Harmadik szám")
 console.log(prism(num1,num2,num3))
+
+
+// 8. Ki az ügyeletes?
+
+function onDuty(numbers,names) {
+    let people = []
+    for (let i = 0; i < numbers.length; i++) {
+        let serial = numbers[i]
+        let person = names[i]
+        people.push(person[serial-1])
+    } return people
+}
+
+let namesArray = [
+    ["Anna", "Béla", "Csabi", "Gergő", "Hajni", "Jani", "Kata"],
+    ["Ákos", "Cili", "Dénes", "Gitta", "Karola", "Lili", "Zotya"],
+    ["Ferkó", "Imre", "Márti", "Nóra", "Polly", "Szabi", "Titti"]
+]
+ let serialNumbers = [1, 5, 3]
+
+console.log(onDuty(serialNumbers,namesArray))
+
+
+// 9. Közös kurzus
+
+function commonCourses (array1, array2) {
+    let commonArray = []
+    for (let i=0; i<array1.length; i++) {
+        for (let j=0; j<array2.length; j++) {
+            if (array1[i] === array2[j]) {
+                commonArray.push(array1[i])
+            }
+        }
+    } return commonArray
+}
+
+let student1 = ["Math", "Music", "Biology"]
+let student2 = ["Drama", "Music", "Biology"]
+
+console.log(commonCourses(student1,student2))
+
+
+// 10. Az utolsó n szám
+
+function lastN(array, number) {
+    return (array.slice(array.length-number, array.length)).reverse()
+}
+
+let inputArray = ["Star Wars", 12, 449, true, "jedi", false, -10, 0.12, "force"]
+let inputN = 5
+
+console.log(lastN(inputArray,inputN))
+
+
+ */
