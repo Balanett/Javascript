@@ -1,0 +1,16 @@
+input {
+    width: 200px;
+}
+.buttons {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+button{
+    width: 70px;
+    height: 30px;
+}
+#message {
+    color: green;
+    font-size: 20px;
+}

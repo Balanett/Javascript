@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <style>
+        body {
+            background-image: url("quiz_background.jpg");
+            background-size: cover;
+            color: white;
+        }
+        fieldset {
+            font-size: 20px;
+        }
+        #result {
+            color: green;
+            font-size: 20px;
+        }
+        #warning {
+            color: red;
+            font-size: 20px;
+        }
+        #submit {
+            color: green;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Programozó Kvíz</h1>
+<h3>Lássuk mennyire vagy képben! ;)</h3>
+
+<p id="result"></p>
+<p id="warning"></p>
+
+
+<form>
+
+    <fieldset>
+        <div>
+            <p>1. A  programozó az egy … (fejezd be a mondatot)</p>
+            <input class="answ" type="radio" name="q1" value="A">
+            <label>A) ember.</label>
+        </div>
+        <div>
+            <input class="answ" type="radio" name="q1" value="B">
+            <label>B) gép, ami a kávét kóddá változtatja.</label>
+        </div>
+    </fieldset>
+
+</form>
+
+<form>
+
+    <fieldset>
+        <div>
+            <p>2. Mire táncolnak a programozók?</p>
+            <input class="answ" type="radio" name="q1" value="A">
+            <label>A) technóra</label>
+        </div>
+        <div>
+            <input class="answ" type="radio" name="q1" value="B">
+            <label>B) algoritmusra</label>
+        </div>
+    </fieldset>
+
+</form>
+
+<form>
+
+<fieldset>
+        <div>
+            <p>3. Hogy kezdi a számolást egy programozó? </p>
+            <input class="answ" type="radio" name="q1" value="A">
+            <label>A) Egy, két, há...</label>
+        </div>
+        <div>
+            <input class="answ" type="radio" name="q1" value="B">
+            <label>B) 0, egy, kettő...</label>
+        </div>
+    </fieldset>
+
+</form>
+
+<form>
+
+<fieldset>
+        <div>
+            <p>4. Mi a tömb utolsü eleme? [“hip”, “hip”, ??? ]</p>
+            <input class="answ" type="radio" name="q1" value="A">
+            <label>A) "hurray"</label>
+        </div>
+        <div>
+            <input class="answ" type="radio" name="q1" value="B">
+            <label>B) "array"</label>
+        </div>
+    </fieldset>
+
+    <br>
+
+    <input id="submit" type="submit" value="Lássuk a medvét!">
+</form>
+
+<script src="quiz_v1.js"></script>
+
+</body>
+</html>
