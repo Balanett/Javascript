@@ -1,8 +1,5 @@
 // Simple Blog:
 
-const body = document.querySelector("body")
-
-
 let getPosts = (resource) => {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest()
@@ -20,9 +17,10 @@ let getPosts = (resource) => {
     })
 };
 
-getPosts("posts/posts.json")
+getPosts("https://jsonplaceholder.typicode.com/posts")
     .then(data => {
-        console.log(data)
+
+        const body = document.querySelector("body")
 
         const gridContainer = document.createElement("div")
         gridContainer.className = "grid-container"
@@ -32,19 +30,25 @@ getPosts("posts/posts.json")
             const divItem = document.createElement("div")
             const h3Item = document.createElement("h3")
             const pItem = document.createElement("p")
-            const btnItem = document.createElement("button")
+            const aItem = document.createElement("a")
+
+            aItem.href = "post.html"
+            aItem.target = "_blank"
+            aItem.innerText = "Learn more ➜ "
 
             divItem.className = "grid-item"
             h3Item.className = "title"
 
             h3Item.innerHTML = data[i].title
             pItem.innerHTML = data[i].body.substring(1,101)
-            btnItem.innerHTML = "Learn more ➜ "
 
             divItem.appendChild(h3Item)
             divItem.appendChild(pItem)
-            divItem.appendChild(btnItem)
+            divItem.appendChild(aItem)
             gridContainer.appendChild(divItem)
+
+            location.hash = data[i].id
+            console.log(location.hash)
         }
     })
     .catch(error => {

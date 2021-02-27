@@ -1,4 +1,4 @@
-#header {
+.header {
     background-image: url("Heart_Pink_Trans_1.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -26,6 +26,6 @@
     text-align: justify;
 }
 
-button {
-
+.post-body {
+    margin: 50px;
 }
