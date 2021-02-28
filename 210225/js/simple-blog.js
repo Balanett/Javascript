@@ -32,7 +32,7 @@ getPosts("https://jsonplaceholder.typicode.com/posts")
             const pItem = document.createElement("p")
             const aItem = document.createElement("a")
 
-            aItem.href = "post.html"
+            aItem.href = "post.html#" + data[i].id;
             aItem.target = "_blank"
             aItem.innerText = "Learn more ➜ "
 
@@ -48,7 +48,7 @@ getPosts("https://jsonplaceholder.typicode.com/posts")
             gridContainer.appendChild(divItem)
 
             location.hash = data[i].id
-            console.log(location.hash)
+            // console.log(location.hash)
         }
     })
     .catch(error => {

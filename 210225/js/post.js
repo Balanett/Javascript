@@ -4,7 +4,7 @@ let getPost = (resource) => {
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest()
         request.addEventListener('readystatechange', () => {
-            if(request.readyState === 4  && request.status === 200) {
+            if (request.readyState === 4 && request.status === 200) {
                 let data = JSON.parse(request.responseText)
                 resolve(data)
             } else if (request.readyState === 4) {
@@ -17,11 +17,20 @@ let getPost = (resource) => {
     })
 };
 
+let hash = window.location.hash;
+let url = "https://jsonplaceholder.typicode.com/posts/";
 
-getPost("https://jsonplaceholder.typicode.com/posts")
+
+if (!hash) {
+    alert("missing id");
+}
+
+url += hash.replace('#', '');
+
+getPost(url)
     .then(data => {
 
-        console.log(data)
+        console.log(data);
 
         const body = document.querySelector("body")
 
@@ -36,7 +45,7 @@ getPost("https://jsonplaceholder.typicode.com/posts")
         pItem.className = "post-body"
 
         h1Item.innerText = data.title
-        h3Item.innerText = "Author: "+data.userId
+        h3Item.innerText = "Author: " + data.userId
         pItem.innerHTML = data.body
 
         divItem.appendChild(h1Item)
