@@ -29,3 +29,23 @@
 .post-body {
     margin: 50px;
 }
+
+.comment-section {
+    margin: 100px 50px 30px 50px;
+    color: deeppink;
+    text-decoration: underline;
+}
+
+.comment {
+    margin: 10px 50px;
+}
+
+.comment-author {
+    color: hotpink;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-body {
+    margin: 0;
+}

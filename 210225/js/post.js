@@ -1,35 +1,19 @@
-// Simple Blog:
-
-let getPost = (resource) => {
-    return new Promise((resolve, reject) => {
-        const request = new XMLHttpRequest()
-        request.addEventListener('readystatechange', () => {
-            if (request.readyState === 4 && request.status === 200) {
-                let data = JSON.parse(request.responseText)
-                resolve(data)
-            } else if (request.readyState === 4) {
-                reject("Could not fetch data")
-            }
-        });
-
-        request.open("GET", resource)
-        request.send();
-    })
-};
+// Simple Blog Post:
 
 let hash = window.location.hash;
-let url = "https://jsonplaceholder.typicode.com/posts/";
+// kivágni: indexOf "#" splice vagy slice, amelyik return-öl és itt létrehozni a hash-ből kivett id-t
+let postUrl = "https://jsonplaceholder.typicode.com/posts/";
+postUrl += hash.replace('#', '');
+let commentUrl = "https://jsonplaceholder.typicode.com/comments?postId=";
+commentUrl += hash.replace('#', '');
+const body = document.querySelector("body");
 
-if (!hash) {
-    alert("missing id");
-}
 
-url += hash.replace('#', '');
+// nem szükséges ilyen sok DOM, markup-pal egyszerűbb!!
 
-getPost(url)
+fetch(postUrl)
+    .then(response => response.json())
     .then(data => {
-
-        const body = document.querySelector("body")
         const divItem = document.createElement("div")
         const h1Item = document.createElement("h1")
         const h3Item = document.createElement("h3")
@@ -40,8 +24,8 @@ getPost(url)
         h3Item.className = "header-item"
         pItem.className = "post-body"
 
-        h1Item.innerText = data.title
-        h3Item.innerText = "Author: " + data.userId
+        h1Item.innerHTML = data.title
+        h3Item.innerHTML = "Author: " + data.userId
         pItem.innerHTML = data.body
 
         divItem.appendChild(h1Item)
@@ -49,7 +33,31 @@ getPost(url)
         body.appendChild(divItem)
         body.appendChild(pItem)
 
+        return fetch(commentUrl);
     })
-    .catch(error => {
-        console.log("Error on rejected:", error)
-    })
+    .then(response => response.json())
+
+    .then(data2 => {
+        const h2Item = document.createElement("h2")
+        h2Item.innerHTML = "Comments"
+        h2Item.className = "comment-section"
+        body.appendChild(h2Item)
+
+        for (let i=0; i<data2.length; i++) {
+            const divItem2 = document.createElement("div")
+            const h3Item2 = document.createElement("h3")
+            const pItem2 = document.createElement("p")
+
+            divItem2.className = "comment"
+            h3Item2.className = "comment-author"
+            pItem2.className = "comment-body"
+
+            h3Item2.innerHTML = data2[i].name
+            pItem2.innerHTML = data2[i].body
+
+            divItem2.appendChild(h3Item2)
+            divItem2.appendChild(pItem2)
+            body.appendChild(divItem2)
+        }
+
+    }).catch(onerror => console.error("Error", onerror));

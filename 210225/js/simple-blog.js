@@ -17,9 +17,11 @@ let getPosts = (resource) => {
     })
 };
 
+
+// csak fetch-eljen és return-öljön:
+// és szétszedni külön fv-be a tömb részt
 getPosts("https://jsonplaceholder.typicode.com/posts")
     .then(data => {
-
         const body = document.querySelector("body")
         const gridContainer = document.createElement("div")
         gridContainer.className = "grid-container"
@@ -47,7 +49,6 @@ getPosts("https://jsonplaceholder.typicode.com/posts")
             gridContainer.appendChild(divItem)
 
             location.hash = data[i].id
-            // console.log(location.hash)
         }
     })
     .catch(error => {
