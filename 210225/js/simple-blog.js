@@ -21,7 +21,6 @@ getPosts("https://jsonplaceholder.typicode.com/posts")
     .then(data => {
 
         const body = document.querySelector("body")
-
         const gridContainer = document.createElement("div")
         gridContainer.className = "grid-container"
         body.appendChild(gridContainer)
