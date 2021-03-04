@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>new post request</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let sum = new FormData();
+			sum.append("a", 5);
+			sum.append("b", 6);
+
+		fetch("https://progmatic.hu/frontend/add-json", {
+			method: "POST",
+			body: sum
+		})
+			.then(resp => resp.text())
+			.then(data => console.log(data));
+	</script>
+</body>
+</html>

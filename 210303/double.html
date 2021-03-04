@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>new post request</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let double = new FormData();
+		double.append("number", 42);
+
+		fetch("https://progmatic.hu/frontend/double", {
+			method: "POST",
+			body: double
+		})
+			.then(resp => resp.text())
+			.then(data => console.log(data));
+	</script>
+</body>
+</html>
